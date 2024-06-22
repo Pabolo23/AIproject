@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt zaliczeniowy - Sztuczna Inteligencja</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("https://e1.pxfuel.com/desktop-wallpaper/726/828/desktop-wallpaper-stock-market-stonks.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #ffffff;
+        text-align: center;
+        padding: 50px;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+      form {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+      }
+      label {
+        font-size: 1.2em;
+      }
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        background: #4caf50;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 1em;
+        border-radius: 5px;
+      }
+      input[type="submit"]:hover {
+        background: #45a049;
+      }
+      .disclaimer {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      .description-btn {
+        margin-top: 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        cursor: pointer;
+        font-size: 1em;
+        border-radius: 5px;
+      }
+      .description-btn:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Projekt zaliczeniowy - Sztuczna Inteligencja</h1>
+    <form action="/forecast" method="post">
+      <label for="symbol">Symbol spółki:</label><br />
+      <input type="text" id="symbol" name="symbol" required /><br />
+
+      <label for="year">Rok początkowy:</label><br />
+      <input type="number" id="year" name="year" required /><br />
+
+      <label for="model">Model:</label><br />
+      <select id="model" name="model" required>
+        <option value="Winters">Holt-Winters</option>
+        <option value="SARIMA">SARIMA</option>
+        <option value="ARIMA">ARIMA</option>
+        <option value="Seasonal Naive">Seasonal Naive</option></select
+      ><br /><br />
+
+      <input type="submit" value="Prognozuj" />
+    </form>
+    <div class="disclaimer">To nie jest porada inwestycyjna</div>
+    <button class="description-btn" onclick="location.href='/description'">
+      Opis funkcjonalności
+    </button>
+  </body>
+</html>
